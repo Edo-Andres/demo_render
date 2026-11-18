@@ -1,0 +1,18 @@
+[project]
+name = "demo-render"
+version = "0.1.0"
+description = "Demo web de soporte de pedidos ficticios con FastAPI y Google ADK"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi==0.162.4",
+    "google-adk==2.14.0",
+    "google-genai==2.34.0",
+    "pandas==3.0.6",
+    "pydantic==2.14.3",
+    "uvicorn==0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx==0.28.1",
+]

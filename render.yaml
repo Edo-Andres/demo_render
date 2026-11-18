@@ -1,0 +1,23 @@
+# Configuracion de entrega: usar desde el repositorio demo_render.
+services:
+  - type: web
+    name: demo-render
+    runtime: python
+    plan: free
+    autoDeployTrigger: "off"
+    buildCommand: uv sync --locked --no-dev
+    startCommand: .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.4"
+      - key: UV_VERSION
+        value: "0.7.13"
+      - key: GOOGLE_GENAI_USE_ENTERPRISE
+        value: "false"
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: DEMO_USUARIO
+        sync: false
+      - key: DEMO_CLAVE
+        sync: false

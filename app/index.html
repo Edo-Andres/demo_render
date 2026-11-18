@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Asistente de soporte</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="pagina">
+    <header class="cabecera">
+      <a class="marca" href="/" aria-label="Asistente de soporte, inicio">
+        <span class="marca-icono" aria-hidden="true">S</span> Asistente de soporte
+      </a>
+      <span class="etiqueta">Demostraci&#243;n</span>
+    </header>
+    <main>
+      <section class="introduccion" aria-labelledby="titulo">
+        <p class="sobre-titulo">ENV&#205;OS &#183; DEVOLUCIONES &#183; ATENCI&#211;N</p>
+        <h1 id="titulo">Tus dudas, con fuentes.</h1>
+        <p>Pregunta sobre nuestras pol&#237;ticas y consulta el texto utilizado para responder.</p>
+      </section>
+      <section class="tarjeta" aria-labelledby="titulo-pregunta">
+        <h2 id="titulo-pregunta">&#191;Qu&#233; necesitas saber?</h2>
+        <form id="consulta-form">
+          <label for="pregunta">Tu pregunta</label>
+          <textarea id="pregunta" name="pregunta" rows="4" maxlength="2000" required
+            aria-describedby="ayuda-pregunta contador" placeholder="Por ejemplo: &#191;cu&#225;nto demora el env&#237;o est&#225;ndar?"></textarea>
+          <div class="ayuda-fila">
+            <span id="ayuda-pregunta">Cada consulta comienza una conversaci&#243;n nueva.</span>
+            <span id="contador">0 / 2000</span>
+          </div>
+          <div class="ejemplos" aria-label="Preguntas de ejemplo">
+            <button type="button" class="ejemplo" data-pregunta="Cuanto demora el envio estandar?">Plazo de env&#237;o</button>
+            <button type="button" class="ejemplo" data-pregunta="Que necesito para devolver un producto?">Devoluciones</button>
+            <button type="button" class="ejemplo" data-pregunta="Cual es el horario de atencion?">Horario de atenci&#243;n</button>
+          </div>
+          <div class="acciones">
+            <button id="enviar" type="submit" class="boton-principal">Consultar</button>
+            <button id="limpiar" type="button" class="boton-secundario">Limpiar</button>
+          </div>
+        </form>
+        <div id="estado" class="estado" role="status" aria-live="polite" hidden></div>
+        <p id="error" class="error" role="alert" hidden></p>
+      </section>
+      <section id="resultado" class="tarjeta resultado" aria-labelledby="titulo-respuesta" hidden>
+        <p class="sobre-titulo">RESPUESTA DEL ASISTENTE</p>
+        <h2 id="titulo-respuesta">Esto es lo que encontramos</h2>
+        <p id="respuesta" class="respuesta"></p>
+        <div class="fuentes-cabecera">
+          <h3>Fuentes consultadas <span id="cantidad-fuentes" class="cantidad"></span></h3>
+          <p>Los fragmentos pueden incluir contexto adicional; no todos responden a tu pregunta.</p>
+        </div>
+        <div id="fuentes"></div>
+        <p id="sin-fuentes" class="nota" hidden>No se consultaron fuentes documentales para esta respuesta.</p>
+        <p id="consulta-id" class="referencia"></p>
+      </section>
+    </main>
+    <footer>Demo con datos y pol&#237;ticas ficticios. No realiza compras, devoluciones ni otras acciones comerciales.</footer>
+  </div>
+</body>
+</html>

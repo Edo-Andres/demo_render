@@ -1,0 +1,6 @@
+pedido_id,estado,total_clp
+PED-1001,entregado,25990
+PED-1002,entregado,14990
+PED-1003,en camino,38990
+PED-1004,en camino,19990
+PED-1005,preparando,29990
